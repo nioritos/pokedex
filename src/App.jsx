@@ -17,7 +17,6 @@ function App() {
       });
       const result = await Promise.all(promises)
       setPokemons(result)
-      console.log(pokemons)
       setLoading(false)
     }
     catch (err) {console.error(err)}
@@ -29,7 +28,7 @@ function App() {
   }, [])
 
   return (
-    <div on className="App px-4 min-w-screen min-h-screen">
+    <div className="App px-4 min-w-screen min-h-screen">
      <NavBar/>
      <SearchBar/>
      <Pokedex pokemons={pokemons} loading={loading}/>
