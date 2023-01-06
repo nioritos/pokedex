@@ -1,9 +1,24 @@
+import Pagination from "./Pagination";
 import Pokemons from "./Pokemons";
 import "../styles/Pokedex.css";
 const Pokedex = (props) => {
-  const { pokemons, loading } = props;
+  const { pokemons, loading, page, totalPages, onLeftClick, onRightClick } = props;
+  
+
+
+  
   return (
     <div className="pokedex-container">
+      <div className="pokedex-header">
+        <h1>Pokedex</h1>
+
+         <Pagination
+          page={page+1}
+          totalPages={totalPages}
+          onLeftClick={onLeftClick}
+          onRightClick={onRightClick}
+        /> 
+      </div>
       {loading ? (
         <div>loading...</div>
       ) : (
