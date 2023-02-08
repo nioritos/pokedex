@@ -19,7 +19,7 @@ const Pokemons = (props) => {
                 </div>
             </div>
             <div className="id-heart">
-                <p>#{pokId}</p>
+                <p># {pokId}</p>
                 <button>{heartOfPokemon}</button>
             </div>
         </div>

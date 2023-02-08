@@ -24,8 +24,8 @@ function SearchBar() {
 
     return(
         <div >
-            <input type="text" name="" id="" placeholder="Find a pokemon" className=" text-black border-2 border-zinc-600 py-2 px-4 rounded-lg mr-4" onChange={onChangeInfo}/>
-            <button onClick={onClickHandler} >Search</button>
+            <input  type="text" name="" id="" placeholder="Find a pokemon" className="search-input text-black border-2 border-zinc-600 py-2 px-4 rounded-lg mr-4" onChange={onChangeInfo} />
+            <button onClick={onClickHandler} className="search-btn rounded-lg">Search</button>
             {pokemon ? (
                 <>
                 <div>

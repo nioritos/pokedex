@@ -10,8 +10,6 @@ const Pokedex = (props) => {
   return (
     <div className="pokedex-container">
       <div className="pokedex-header">
-        <h1>Pokedex</h1>
-
          <Pagination
           page={page+1}
           totalPages={totalPages}
@@ -20,7 +18,7 @@ const Pokedex = (props) => {
         /> 
       </div>
       {loading ? (
-        <div>loading...</div>
+        <h1 style={{color: '#fff', textAlign: 'center', fontSize: '64px', marginTop: '10rem'}}>AWAIT, THIS APP IS LOADING...</h1>
       ) : (
         <div className="pokemons-container">
           {pokemons &&
