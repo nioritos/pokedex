@@ -14,8 +14,7 @@ function SearchBar() {
        onSearchHandler(found)
         // console.log(`pokemon ${found}`)
     }
-
-    
+    const heartOfPokemon = "❤";
   const onSearchHandler = async pokemon => {
     const result = await searchPokemon(pokemon)
       setPokemon(result)
@@ -28,12 +27,24 @@ function SearchBar() {
             <button onClick={onClickHandler} className="search-btn rounded-lg">Search</button>
             {pokemon ? (
                 <>
-                <div>
-                    <h1>{pokemon.name}</h1>
-                    <h3>#{pokemon.id}</h3>
+                <div className='pokemon-card'>
+                    <img src={pokemon.sprites.back_default} alt={pokemon.name} />
+            <div className="name-types">
+                <h2>{pokemon.name}</h2>
+                <div className='types'>
+                    {pokemon.types.map(
+                        (type, index) => {
+                            return (
+                                <p className='type' key={index}>{type.type.name}</p>
+                            )
+                         }
+                        )}
                 </div>
-                <div>
-                    <img src={pokemon.sprites.back_default} alt="" />
+            </div>
+            <div className="id-heart">
+                <p># {pokemon.id}</p>
+                <button>{heartOfPokemon}</button>
+            </div>
                 </div>
                 </>
             ) : null}
